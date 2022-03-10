@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C9E7693127DA388000898BF9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7693027DA388000898BF9 /* main.swift */; };
+		C9E7693A27DA45DE00898BF9 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = C9E7693927DA45DE00898BF9 /* OrderedCollections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E7693A27DA45DE00898BF9 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +45,7 @@
 			children = (
 				C9E7692F27DA388000898BF9 /* amad-afl1 */,
 				C9E7692E27DA388000898BF9 /* Products */,
+				C9E7693727DA45AF00898BF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +65,13 @@
 			path = "amad-afl1";
 			sourceTree = "<group>";
 		};
+		C9E7693727DA45AF00898BF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +88,9 @@
 			dependencies = (
 			);
 			name = "amad-afl1";
+			packageProductDependencies = (
+				C9E7693927DA45DE00898BF9 /* OrderedCollections */,
+			);
 			productName = "amad-afl1";
 			productReference = C9E7692D27DA388000898BF9 /* amad-afl1 */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +119,9 @@
 				Base,
 			);
 			mainGroup = C9E7692427DA388000898BF9;
+			packageReferences = (
+				C9E7693827DA45DE00898BF9 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = C9E7692E27DA388000898BF9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -282,6 +298,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9E7693827DA45DE00898BF9 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9E7693927DA45DE00898BF9 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9E7693827DA45DE00898BF9 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9E7692527DA388000898BF9 /* Project object */;
 }
