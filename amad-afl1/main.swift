@@ -8,7 +8,7 @@
 import Foundation
 import OrderedCollections
 
-var shop = true; var buy = true
+var shop = true;
 
 var fnb: OrderedDictionary = [
     "F03": "Gado-Gado",
@@ -39,17 +39,22 @@ while(shop){
         for(code, menu) in fnb{
             print("[\(code)] \(menu)")
         }
-        while(buy){
+        print("[Q] Back to Main Menu")
+        while(true){
             print("\nYour F&B choice? ", terminator: ""); let fnb_option = readLine()?.uppercased()
             if(fnb_option?.caseInsensitiveCompare("q") == .orderedSame){
                 break
-            }
-            print("How many " + fnb["\(fnb_option ?? "")"]! + " you want to buy? ", terminator: "")
-            let amount = Int(readLine()!)
-            cart[fnb["\(fnb_option ?? "")"]!] = amount
-            print("Shopping Cart (\(cart.count) items):")
-            for item in cart{
-                print(String(item.value) + " " + String(item.key))
+            } else if(fnb.keys.contains(fnb_option!)){
+                print("How many " + fnb["\(fnb_option ?? "")"]! + " you want to buy? ", terminator: "")
+                let amount = Int(readLine()!)
+                cart[fnb["\(fnb_option ?? "")"]!] = amount
+                print("Shopping Cart (\(cart.count) items):")
+                for item in cart{
+                    print(String(item.value) + " " + String(item.key))
+                }
+            } else {
+                print("Menu not found!")
+                break
             }
         }
     case 2:
